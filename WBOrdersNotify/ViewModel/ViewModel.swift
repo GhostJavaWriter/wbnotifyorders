@@ -27,7 +27,7 @@ class ViewModel {
     
     private let headerName = "Authorization"
     
-    func fetchBalance(completion: @escaping () -> Void) {
+    func fetchData(completion: @escaping () -> Void) {
         guard let request = makeRequest() else {
             print("error request making")
             return
@@ -39,13 +39,17 @@ class ViewModel {
         }
     }
     
-    func getGoodsBalance() -> Int {
-        print("get goods")
-        guard let result = data else {
-            print("return 0")
-            return 0
-        }
-        return result.stocks[0].stock
+    func numberOfRowsInSection() -> Int {
+        return data?.stocks.count ?? 0
+    }
+    
+    func getCellConfiguration(forIndexPath indexPath: IndexPath) -> String {
+        guard let item = data?.stocks[indexPath.row] else { return "error" }
+        return "\(item.name): \(item.stock)"
+    }
+    
+    func getTitle() -> String {
+        return data?.stocks[0].brand ?? "Default title"
     }
     
     // MARK: - Support functions
