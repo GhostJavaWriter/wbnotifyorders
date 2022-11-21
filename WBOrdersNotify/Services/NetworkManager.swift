@@ -9,8 +9,8 @@ import Foundation
 
 class NetworkManager {
     
-    func fetchData(withRequest request: URLRequest,
-                   completion: @escaping (Model?) -> Void) {
+    func fetchData<T: Decodable>(withRequest request: URLRequest,
+                   completion: @escaping (T?) -> Void) {
         
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             
@@ -21,7 +21,7 @@ class NetworkManager {
             
             guard let data = data else { return }
 
-            let jsonData = self?.decodeJSON(type: Model.self, data: data)
+            let jsonData = self?.decodeJSON(type: T.self, data: data)
             completion(jsonData)
         }
         task.resume()
