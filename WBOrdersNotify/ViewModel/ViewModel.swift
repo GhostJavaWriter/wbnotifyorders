@@ -18,14 +18,18 @@ enum HTTPMethod: String {
 
 class ViewModel {
     
+    // MARK: - Properties
+    
     private lazy var networkManager = NetworkManager()
     private var data: Model?
     
-    private let url = URL(string: "https://suppliers-api.wildberries.ru/api/v2/stocks?skip=0&take=1000")
+    private let url = URL(string: "https://suppliers-api.wildberries.ru/api/v2/stocks?")
     
     private let APIKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImQxNGJhYTMxLTNiMTAtNGRjNi1hNjA0LTY0OWI1NTBhNGUzMiJ9.t6hQvvWXzxGiSRRSnJN2nNBSXe6I_IbSj42aiza5r8w"
     
     private let headerName = "Authorization"
+    
+    // MARK: - Public methods
     
     func fetchData(completion: @escaping () -> Void) {
         guard let request = makeRequest() else {
@@ -33,7 +37,7 @@ class ViewModel {
             return
         }
         networkManager.fetchData(withRequest: request) { model in
-            print("success")
+            
             self.data = model
             completion()
         }
@@ -56,10 +60,23 @@ class ViewModel {
     
     private func makeRequest()-> URLRequest? {
         
-        guard let url = url else { return nil }
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "suppliers-api.wildberries.ru"
+        components.path = "/api/v2/stocks"
+
+        components.queryItems = [
+            URLQueryItem(name: "take", value: "1000"),
+            URLQueryItem(name: "skip", value: "0")
+        ]
+        
+        guard let string = components.string,
+              let url = URL(string: string) else { return nil }
+        
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue(APIKey, forHTTPHeaderField: headerName)
+        
         return request
     }
 }
