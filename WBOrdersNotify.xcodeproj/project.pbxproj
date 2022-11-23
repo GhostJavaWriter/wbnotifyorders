@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBC292A595300A31477 /* AppDelegate.swift */; };
 		DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBE292A595300A31477 /* SceneDelegate.swift */; };
-		DEC3EDC1292A595300A31477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDC0292A595300A31477 /* ViewController.swift */; };
+		DEC3EDC1292A595300A31477 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDC0292A595300A31477 /* MainViewController.swift */; };
 		DEC3EDC6292A595500A31477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC3EDC5292A595500A31477 /* Assets.xcassets */; };
 		DEC3EDC9292A595500A31477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC3EDC7292A595500A31477 /* LaunchScreen.storyboard */; };
 		DEC3EDD1292A5F5200A31477 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDD0292A5F5200A31477 /* Model.swift */; };
@@ -17,13 +17,14 @@
 		DEC3EDD5292B35BA00A31477 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDD4292B35BA00A31477 /* NetworkManager.swift */; };
 		DEC3EDD7292B35CC00A31477 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDD6292B35CC00A31477 /* ViewModel.swift */; };
 		DEC3EDDD292B427900A31477 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DEC3EDDC292B427900A31477 /* .gitignore */; };
+		DEC3EDE5292C850300A31477 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDE4292C850300A31477 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DEC3EDB9292A595300A31477 /* WBOrdersNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOrdersNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC3EDBC292A595300A31477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC3EDBE292A595300A31477 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEC3EDC0292A595300A31477 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEC3EDC0292A595300A31477 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEC3EDC5292A595500A31477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC3EDC8292A595500A31477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC3EDCA292A595500A31477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		DEC3EDD4292B35BA00A31477 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DEC3EDD6292B35CC00A31477 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DEC3EDDC292B427900A31477 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DEC3EDE4292C850300A31477 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				DEC3EDBC292A595300A31477 /* AppDelegate.swift */,
 				DEC3EDBE292A595300A31477 /* SceneDelegate.swift */,
+				DEC3EDE6292C851400A31477 /* Extenstions */,
 				DEC3EDDB292B3AC500A31477 /* View */,
 				DEC3EDD8292B3A8800A31477 /* Services */,
 				DEC3EDD9292B3A9A00A31477 /* ViewModel */,
@@ -106,9 +109,17 @@
 		DEC3EDDB292B3AC500A31477 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DEC3EDC0292A595300A31477 /* ViewController.swift */,
+				DEC3EDC0292A595300A31477 /* MainViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DEC3EDE6292C851400A31477 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				DEC3EDE4292C850300A31477 /* UIColor+Extension.swift */,
+			);
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC3EDD5292B35BA00A31477 /* NetworkManager.swift in Sources */,
-				DEC3EDC1292A595300A31477 /* ViewController.swift in Sources */,
+				DEC3EDC1292A595300A31477 /* MainViewController.swift in Sources */,
 				DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */,
 				DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */,
 				DEC3EDD1292A5F5200A31477 /* Model.swift in Sources */,
 				DEC3EDD3292A5FAB00A31477 /* Stock.swift in Sources */,
 				DEC3EDD7292B35CC00A31477 /* ViewModel.swift in Sources */,
+				DEC3EDE5292C850300A31477 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

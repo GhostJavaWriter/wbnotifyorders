@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  WBOrdersNotify
 //
 //  Created by Bair Nadtsalov on 20.11.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     // MARK: UI elements
     
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
+        view.backgroundColor = .pagesBackgroundColor
+
         updateDataFromNetwork()
     }
     
@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         viewModel.fetchData { [weak self] in
             
             DispatchQueue.main.async {
+                self?.title = self?.viewModel.getTitle()
                 self?.tableView.reloadData()
                 self?.activityIndicator.stopAnimating()
             }
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection()
