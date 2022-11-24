@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  MainViewController.swift
 //  WBOrdersNotify
 //
 //  Created by Bair Nadtsalov on 24.11.2022.
@@ -7,7 +7,9 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MainViewController: UIViewController {
+    
+    private var menuViewModel = MenuViewModel()
     
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: view.frame, style: .insetGrouped)
@@ -25,18 +27,18 @@ class MenuViewController: UIViewController {
     }
 }
 
-extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return menuViewModel.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        menuViewModel.titleForHeaderInSection(section)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 1
-        case 1: return 2
-        default: return 0
-        }
+        menuViewModel.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

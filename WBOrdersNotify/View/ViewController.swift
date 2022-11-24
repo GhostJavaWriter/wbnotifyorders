@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ViewController.swift
 //  WBOrdersNotify
 //
 //  Created by Bair Nadtsalov on 20.11.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class ViewController: UIViewController {
     
     // MARK: UI elements
     
@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection()

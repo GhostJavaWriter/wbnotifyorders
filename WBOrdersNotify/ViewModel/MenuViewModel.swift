@@ -5,18 +5,27 @@
 //  Created by Bair Nadtsalov on 24.11.2022.
 //
 
-import Foundation
+import UIKit
 
 class MenuViewModel {
     
+    private var sections = ["Активные заказы", "История заказов"]
+    private var sectionContent = [["iCloud", "Reset Data Integrity"],
+                                  ["Info","Credits","Privacy","Blog",]]
+
     
-    
-    func numberOfRowsInSection() -> Int {
-        return 0
+    func titleForHeaderInSection(_ section: Int) -> String {
+        sections[section]
+    }
+    func numberOfSections() -> Int {
+        sections.count
     }
     
-    func getCellConfiguration(forIndexPath indexPath: IndexPath) -> String {
+    func numberOfRowsInSection(_ section: Int) -> Int {
+        sectionContent[section].count
+    }
+    
+    func cellForAtIndexPath() {
         
-        return ""
     }
 }
