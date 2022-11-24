@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE021773292F807000FB62E8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE021772292F807000FB62E8 /* MenuViewController.swift */; };
+		DE021775292F813800FB62E8 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE021774292F813800FB62E8 /* MenuViewModel.swift */; };
 		DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBC292A595300A31477 /* AppDelegate.swift */; };
 		DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBE292A595300A31477 /* SceneDelegate.swift */; };
 		DEC3EDC1292A595300A31477 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDC0292A595300A31477 /* MainViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE021772292F807000FB62E8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		DE021774292F813800FB62E8 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		DEC3EDB9292A595300A31477 /* WBOrdersNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOrdersNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC3EDBC292A595300A31477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC3EDBE292A595300A31477 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE021776292F81D600FB62E8 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE021772292F807000FB62E8 /* MenuViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		DEC3EDB0292A595300A31477 = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +79,11 @@
 		DEC3EDBB292A595300A31477 /* WBOrdersNotify */ = {
 			isa = PBXGroup;
 			children = (
+				DEC3EDD8292B3A8800A31477 /* Services */,
 				DEC3EDBC292A595300A31477 /* AppDelegate.swift */,
 				DEC3EDBE292A595300A31477 /* SceneDelegate.swift */,
 				DEC3EDE6292C851400A31477 /* Extenstions */,
 				DEC3EDDB292B3AC500A31477 /* View */,
-				DEC3EDD8292B3A8800A31477 /* Services */,
 				DEC3EDD9292B3A9A00A31477 /* ViewModel */,
 				DEC3EDDA292B3AA300A31477 /* Model */,
 				DEC3EDC5292A595500A31477 /* Assets.xcassets */,
@@ -93,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC3EDD6292B35CC00A31477 /* ViewModel.swift */,
+				DE021774292F813800FB62E8 /* MenuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -110,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC3EDC0292A595300A31477 /* MainViewController.swift */,
+				DE021776292F81D600FB62E8 /* MainScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,7 +210,9 @@
 				DEC3EDD5292B35BA00A31477 /* NetworkManager.swift in Sources */,
 				DEC3EDC1292A595300A31477 /* MainViewController.swift in Sources */,
 				DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */,
+				DE021775292F813800FB62E8 /* MenuViewModel.swift in Sources */,
 				DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */,
+				DE021773292F807000FB62E8 /* MenuViewController.swift in Sources */,
 				DEC3EDD1292A5F5200A31477 /* Model.swift in Sources */,
 				DEC3EDD3292A5FAB00A31477 /* Stock.swift in Sources */,
 				DEC3EDD7292B35CC00A31477 /* ViewModel.swift in Sources */,
