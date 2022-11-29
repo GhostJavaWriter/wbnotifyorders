@@ -23,8 +23,6 @@ class ViewModel {
     private lazy var networkManager = NetworkManager()
     private var data: Model?
     
-    private let url = URL(string: "https://suppliers-api.wildberries.ru/api/v2/stocks?")
-    
     private let APIKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImQxNGJhYTMxLTNiMTAtNGRjNi1hNjA0LTY0OWI1NTBhNGUzMiJ9.t6hQvvWXzxGiSRRSnJN2nNBSXe6I_IbSj42aiza5r8w"
     
     private let headerName = "Authorization"

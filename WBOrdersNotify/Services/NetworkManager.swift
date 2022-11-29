@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum Error: Swift.Error {
+    case requestError
+}
+
 class NetworkManager {
     
     func fetchData<T: Decodable>(withRequest request: URLRequest,
