@@ -23,6 +23,10 @@ class NetworkManager {
                 return
             }
             
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Response status code: ", httpResponse.statusCode)
+            }
+            
             guard let data = data else { return }
 
             let jsonData = self?.decodeJSON(type: T.self, data: data)

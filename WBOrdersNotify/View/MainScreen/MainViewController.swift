@@ -9,11 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private var menuViewModel = MenuViewModel()
+    private var mainViewModel = MainViewModel()
     
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: view.frame, style: .insetGrouped)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .red
@@ -24,29 +24,53 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         
         view.addSubview(tableView)
+        
+        mainViewModel.fetchOrdersData(startDate: "2022-11-01T00:00:00Z",
+                                      endDate: "2022-11-29T00:00:00Z")
+        { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return menuViewModel.numberOfSections()
+        return mainViewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        menuViewModel.titleForHeaderInSection(section)
+        mainViewModel.titleForHeaderInSection(section)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        menuViewModel.numberOfRowsInSection(section)
+        mainViewModel.numberOfRowsInSection(section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        var config = cell.defaultContentConfiguration()
-        config.text = "Section: \(indexPath.section) Row: \(indexPath.row)"
-        cell.contentConfiguration = config
-        cell.backgroundColor = .white
+        
+//        switch indexPath.section {
+//
+//        }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else {
+            print("default cell")
+            return UITableViewCell() }
+        cell.cellData = mainViewModel.getCellDataAtIndexPath(indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let viewController = OrderViewController()
+        viewController.orderModel = mainViewModel.getCellDataAtIndexPath(indexPath)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

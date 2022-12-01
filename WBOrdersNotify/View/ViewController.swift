@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         view.addSubview(indicator)
+//        try this:
+//        UIActivityIndicatorView(frame: CGRect(origin: view.center, size: .zero))
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -43,23 +45,27 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .pagesBackgroundColor
 
-        updateDataFromNetwork()
+        //updateDataFromNetwork()
     }
     
     // MARK: Support functions
-
+    
+    private func configureSubview() {
+        
+    }
+    
     private func updateDataFromNetwork() {
         
         activityIndicator.startAnimating()
         
-        viewModel.fetchData { [weak self] in
-            
-            DispatchQueue.main.async {
-                self?.title = self?.viewModel.getTitle()
-                self?.tableView.reloadData()
-                self?.activityIndicator.stopAnimating()
-            }
-        }
+//        viewModel.fetchOrdersData(startDate: "", endDate: "") { [weak self] in
+//
+//            DispatchQueue.main.async {
+//                self?.title = self?.viewModel.getTitle()
+//                self?.tableView.reloadData()
+//                self?.activityIndicator.stopAnimating()
+//            }
+//        }
     }
 }
 
