@@ -1,5 +1,5 @@
 //
-//  Stock.swift
+//  StockModel.swift
 //  WBOrdersNotify
 //
 //  Created by Bair Nadtsalov on 20.11.2022.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Stock: Decodable {
+struct StockModel: Decodable {
+   
     let brand: String
     let name: String
     let barcode: String

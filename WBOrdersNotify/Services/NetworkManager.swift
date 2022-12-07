@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum Error: Swift.Error {
+    case requestError
+}
+
 class NetworkManager {
     
     func fetchData<T: Decodable>(withRequest request: URLRequest,
@@ -17,6 +21,10 @@ class NetworkManager {
             if let error = error {
                 print(error.localizedDescription)
                 return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Response status code: ", httpResponse.statusCode)
             }
             
             guard let data = data else { return }
