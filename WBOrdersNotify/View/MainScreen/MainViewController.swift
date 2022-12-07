@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
         view.addSubview(tableView)
         
         mainViewModel.fetchOrdersData(startDate: "2022-11-01T00:00:00Z",
-                                      endDate: "2022-11-29T00:00:00Z")
+                                      endDate: "2022-12-29T00:00:00Z")
         { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -54,10 +54,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-//        switch indexPath.section {
-//
-//        }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else {
             print("default cell")

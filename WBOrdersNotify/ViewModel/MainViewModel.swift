@@ -9,16 +9,29 @@ import UIKit
 
 class MainViewModel {
     
-    private var sections = ["Активные заказы", "История заказов"]
-    private var sectionContent = [["iCloud", "Reset Data Integrity"],
-                                  ["Info","Credits","Privacy","Blog",]]
+    private var sections = ["Новые", "В работе", "Завершенные"]
+    private var newOrders : [OrderModel] = []
+    private var ordersInProgress : [OrderModel] = []
+    private var completedOrders : [OrderModel] = []
     
-    private lazy var requestkManager = RequestManager()
+    private lazy var requestManager = RequestManager()
     private var ordersFetchResult: OrdersResultModel?
     
     func fetchOrdersData(startDate: String, endDate: String, completion: @escaping () -> Void) {
-        requestkManager.fetchOrdersData(startDate: startDate, endDate: endDate) { [weak self] result in
+        requestManager.fetchOrdersData(startDate: startDate, endDate: endDate) { [weak self] result in
+            
             self?.ordersFetchResult = result
+            if let orders = self?.ordersFetchResult?.orders {
+                for order in orders {
+                    print(order.userStatus)
+                    switch order.userStatus {
+                    case 0: self?.newOrders.append(order)
+                    case 1: self?.ordersInProgress.append(order)
+                    case 2,3,4: self?.completedOrders.append(order)
+                    default: break
+                    }
+                }
+            }
             completion()
         }
     }
@@ -27,19 +40,27 @@ class MainViewModel {
         sections[section]
     }
     func numberOfSections() -> Int {
-        return 2
+        return sections.count
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
         
         switch section {
-        case 0: return 1
-        case 1: return ordersFetchResult?.total ?? 0
+        case 0: return newOrders.count
+        case 1: return ordersInProgress.count
+        case 2,3,4: return completedOrders.count
         default: return 0
         }
     }
     
     func getCellDataAtIndexPath(_ indexPath: IndexPath) -> OrderModel? {
-        ordersFetchResult?.orders[indexPath.row]
+        
+        switch indexPath.section {
+        case 0: return newOrders[indexPath.row]
+        case 1: return ordersInProgress[indexPath.row]
+        case 2,3,4: return completedOrders[indexPath.row]
+        default: return nil
+        }
+
     }
 }
