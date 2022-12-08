@@ -18,6 +18,16 @@ class OrderViewController: UIViewController {
      let totalPrice: Int
      let convertedPrice: Int
      let deliveryType: Int
+     
+     integer
+     Enum: 0 1 2 3 4 5
+     Статус выставляемый Wildberries.
+     0 - Новый заказ.
+     1 - Отмена клиента.
+     2 - Доставлен.
+     3 - Возврат.
+     4 - Ожидает.
+     5 - Брак.
      */
     
     private lazy var mainContainerView: UIView = {
@@ -49,6 +59,7 @@ class OrderViewController: UIViewController {
     }()
     
     var orderModel: OrderModel?
+    private let orderViewModel = OrderViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +71,7 @@ class OrderViewController: UIViewController {
             dateCreatedLabel.text = model.dateCreated
             officeAddressLabel.text = model.officeAddress
             userStatusLabel.text = "\(model.userStatus)"
-            totalPriceLabel.text = "\(model.totalPrice)"
+            totalPriceLabel.text = "\(model.totalPrice / 100) RUB"
         } else {
             print("order model nil")
         }

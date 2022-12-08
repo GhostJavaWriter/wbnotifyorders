@@ -16,6 +16,7 @@
 		DE0217C029388E1A00FB62E8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217BF29388E1A00FB62E8 /* UIView+Extension.swift */; };
 		DE0217C22938972800FB62E8 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217C12938972800FB62E8 /* OrderViewController.swift */; };
 		DE0217F0293CE23100FB62E8 /* UserStatuses in Resources */ = {isa = PBXBuildFile; fileRef = DE0217EF293CE23100FB62E8 /* UserStatuses */; };
+		DE0217F229423A8A00FB62E8 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */; };
 		DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBC292A595300A31477 /* AppDelegate.swift */; };
 		DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBE292A595300A31477 /* SceneDelegate.swift */; };
 		DEC3EDC1292A595300A31477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDC0292A595300A31477 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		DE0217BF29388E1A00FB62E8 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DE0217C12938972800FB62E8 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		DE0217EF293CE23100FB62E8 /* UserStatuses */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatuses; sourceTree = "<group>"; };
+		DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		DEC3EDB9292A595300A31477 /* WBOrdersNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOrdersNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC3EDBC292A595300A31477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC3EDBE292A595300A31477 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				DEC3EDD6292B35CC00A31477 /* ViewModel.swift */,
 				DE021774292F813800FB62E8 /* MainViewModel.swift */,
+				DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				DEC3EDD7292B35CC00A31477 /* ViewModel.swift in Sources */,
 				DEC3EDE5292C850300A31477 /* UIColor+Extension.swift in Sources */,
 				DE0217C22938972800FB62E8 /* OrderViewController.swift in Sources */,
+				DE0217F229423A8A00FB62E8 /* OrderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
