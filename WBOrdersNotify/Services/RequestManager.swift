@@ -18,13 +18,18 @@ enum HTTPMethod: String {
 
 enum APIMethod: String {
     
-    case stocks = "/api/v2/stocks" //список товаров с отстатками
-    case orders = "/api/v2/orders" //список заказов
+    case stocks = "/api/v2/stocks" // список товаров с отстатками
+    case orders = "/api/v2/orders" // список заказов
 }
 
 enum RequestParams: String {
     
-    case take, skip, date_start, date_end, id, search
+    case take = "take"
+    case skip = "skip"
+    case dateStart = "date_start"
+    case dateEnd = "date_end"
+    case id = "id"
+    case search = "search"
 }
 
 class RequestManager {
@@ -42,9 +47,9 @@ class RequestManager {
     func fetchOrdersData<T: Decodable>(startDate: String, endDate: String, completion: @escaping (T?) -> Void) {
         
         let queryItems = [
-            URLQueryItem(name: RequestParams.date_start.rawValue,
+            URLQueryItem(name: RequestParams.dateStart.rawValue,
                          value: startDate),
-            URLQueryItem(name: RequestParams.date_end.rawValue,
+            URLQueryItem(name: RequestParams.dateEnd.rawValue,
                          value: endDate),
             URLQueryItem(name: RequestParams.take.rawValue,
                          value: String(1000)),

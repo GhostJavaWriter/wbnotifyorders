@@ -13,7 +13,6 @@ class ViewModel {
     
     private lazy var requestkManager = RequestManager()
     private var stockFetchResult: StockResultModel?
-
     
     // MARK: - TableView dataSource
     

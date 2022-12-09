@@ -10,12 +10,12 @@ import UIKit
 class MainViewModel {
     
     private var sections = ["Ожидают", "Новые", "Отменено", "Возврат", "Брак", "Доставлено"]
-    private var newOrders : [OrderModel] = [] // status 0
-    private var canceledOrders : [OrderModel] = [] // status 1
-    private var deliveredOrders : [OrderModel] = [] // status 2
-    private var returnedOrders : [OrderModel] = [] // status 3
-    private var waitingOrders : [OrderModel] = [] // status 4
-    private var defectedOrders : [OrderModel] = [] // status 5
+    private var newOrders: [OrderModel] = [] // status 0
+    private var canceledOrders: [OrderModel] = [] // status 1
+    private var deliveredOrders: [OrderModel] = [] // status 2
+    private var returnedOrders: [OrderModel] = [] // status 3
+    private var waitingOrders: [OrderModel] = [] // status 4
+    private var defectedOrders: [OrderModel] = [] // status 5
     
     private var storeStocks: [String: StockModel] = [:] {
         didSet {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D61D973C54A1ADA30679E10 /* libPods-WBOrdersNotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6542392A65E75F4ADA540A8E /* libPods-WBOrdersNotify.a */; };
 		DE021773292F807000FB62E8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE021772292F807000FB62E8 /* MainViewController.swift */; };
 		DE021775292F813800FB62E8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE021774292F813800FB62E8 /* MainViewModel.swift */; };
 		DE02177A292F98B200FB62E8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE021779292F98B200FB62E8 /* CustomTableViewCell.swift */; };
@@ -17,6 +18,8 @@
 		DE0217C22938972800FB62E8 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217C12938972800FB62E8 /* OrderViewController.swift */; };
 		DE0217F229423A8A00FB62E8 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */; };
 		DE0217F5294375FF00FB62E8 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217F4294375FF00FB62E8 /* ErrorHandler.swift */; };
+		DE0217F7294381D700FB62E8 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = DE0217F6294381D700FB62E8 /* podfile */; };
+		DE0217FA2943844600FB62E8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DE0217F92943844600FB62E8 /* .swiftlint.yml */; };
 		DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBC292A595300A31477 /* AppDelegate.swift */; };
 		DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBE292A595300A31477 /* SceneDelegate.swift */; };
 		DEC3EDC1292A595300A31477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDC0292A595300A31477 /* ViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002B3EB3EA064613340DEBFB /* Pods-WBOrdersNotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBOrdersNotify.release.xcconfig"; path = "Target Support Files/Pods-WBOrdersNotify/Pods-WBOrdersNotify.release.xcconfig"; sourceTree = "<group>"; };
+		6542392A65E75F4ADA540A8E /* libPods-WBOrdersNotify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WBOrdersNotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D6B17EFCBCF7D662C33808C /* Pods-WBOrdersNotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBOrdersNotify.debug.xcconfig"; path = "Target Support Files/Pods-WBOrdersNotify/Pods-WBOrdersNotify.debug.xcconfig"; sourceTree = "<group>"; };
 		DE021772292F807000FB62E8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE021774292F813800FB62E8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DE021779292F98B200FB62E8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -41,6 +47,8 @@
 		DE0217C12938972800FB62E8 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		DE0217F4294375FF00FB62E8 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		DE0217F6294381D700FB62E8 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		DE0217F92943844600FB62E8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DEC3EDB9292A595300A31477 /* WBOrdersNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOrdersNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC3EDBC292A595300A31477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC3EDBE292A595300A31477 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,12 +69,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D61D973C54A1ADA30679E10 /* libPods-WBOrdersNotify.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43B3C69AD523EF57106232FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6542392A65E75F4ADA540A8E /* libPods-WBOrdersNotify.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE021776292F81D600FB62E8 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +104,13 @@
 		DEC3EDB0292A595300A31477 = {
 			isa = PBXGroup;
 			children = (
+				DE0217F92943844600FB62E8 /* .swiftlint.yml */,
+				DE0217F6294381D700FB62E8 /* podfile */,
 				DEC3EDDC292B427900A31477 /* .gitignore */,
 				DEC3EDBB292A595300A31477 /* WBOrdersNotify */,
 				DEC3EDBA292A595300A31477 /* Products */,
+				ECDBB5FBC6BEF4F0D9974440 /* Pods */,
+				43B3C69AD523EF57106232FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +189,15 @@
 			path = Extenstions;
 			sourceTree = "<group>";
 		};
+		ECDBB5FBC6BEF4F0D9974440 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D6B17EFCBCF7D662C33808C /* Pods-WBOrdersNotify.debug.xcconfig */,
+				002B3EB3EA064613340DEBFB /* Pods-WBOrdersNotify.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEC3EDCD292A595500A31477 /* Build configuration list for PBXNativeTarget "WBOrdersNotify" */;
 			buildPhases = (
+				61ABB7A09F4FCACED94A945B /* [CP] Check Pods Manifest.lock */,
 				DEC3EDB5292A595300A31477 /* Sources */,
 				DEC3EDB6292A595300A31477 /* Frameworks */,
 				DEC3EDB7292A595300A31477 /* Resources */,
+				DE0217F8294383DE00FB62E8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -226,13 +258,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0217FA2943844600FB62E8 /* .swiftlint.yml in Resources */,
 				DEC3EDC9292A595500A31477 /* LaunchScreen.storyboard in Resources */,
 				DEC3EDDD292B427900A31477 /* .gitignore in Resources */,
+				DE0217F7294381D700FB62E8 /* podfile in Resources */,
 				DEC3EDC6292A595500A31477 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61ABB7A09F4FCACED94A945B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBOrdersNotify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE0217F8294383DE00FB62E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEC3EDB5292A595300A31477 /* Sources */ = {
@@ -390,6 +467,7 @@
 		};
 		DEC3EDCE292A595500A31477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D6B17EFCBCF7D662C33808C /* Pods-WBOrdersNotify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -421,6 +499,7 @@
 		};
 		DEC3EDCF292A595500A31477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 002B3EB3EA064613340DEBFB /* Pods-WBOrdersNotify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

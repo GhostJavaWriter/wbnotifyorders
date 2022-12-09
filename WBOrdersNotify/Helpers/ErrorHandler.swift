@@ -14,4 +14,3 @@ enum NetworkErrors: Swift.Error {
 enum UnexpectedErrors {
     case cannotFindProductWithBarcode
 }
-

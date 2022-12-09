@@ -10,8 +10,8 @@ import Foundation
 class NetworkManager {
     
     func fetchData<T: Decodable>(withRequest request: URLRequest,
-                   completion: @escaping (T?) -> Void) {
-        
+                                 completion: @escaping (T?) -> Void)
+    {
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             
             if let error = error {

@@ -1,0 +1,3 @@
+target 'WBOrdersNotify' do
+  pod 'SwiftLint'
+end
