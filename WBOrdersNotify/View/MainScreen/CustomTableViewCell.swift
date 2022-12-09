@@ -38,7 +38,7 @@ class CustomTableViewCell: UITableViewCell {
             guard let data = cellData else { return }
             orderNameLabel.text = data.orderId
             orderPriceLabel.text = String(data.totalPrice)
-            orderDateCreatedLabel.text = data.dateCreated
+            orderDateCreatedLabel.text = "\(data.barcode)"
         }
     }
     

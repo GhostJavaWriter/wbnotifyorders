@@ -13,13 +13,7 @@ class ViewModel {
     
     private lazy var requestkManager = RequestManager()
     private var stockFetchResult: StockResultModel?
-    
-    func fetchStocksData(take: Int, skip: Int, completion: @escaping () -> Void) {
-        requestkManager.fetchStocksData(take: take, skip: skip) { [weak self] result in
-            self?.stockFetchResult = result
-            completion()
-        }
-    }
+
     
     // MARK: - TableView dataSource
     

@@ -25,13 +25,8 @@ class MainViewController: UIViewController {
         
         view.addSubview(tableView)
         
-        mainViewModel.fetchOrdersData(startDate: "2022-11-01T00:00:00Z",
-                                      endDate: "2022-12-29T00:00:00Z")
-        { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        updateStoreStocks()
+        fetchOrders()
     }
 }
 
@@ -68,5 +63,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let viewController = OrderViewController()
         viewController.orderModel = mainViewModel.getCellDataAtIndexPath(indexPath)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+private extension MainViewController {
+    func updateStoreStocks() {
+        mainViewModel.updateStoreStocks { error in
+            if error == nil {
+                NSLog("Store stocks updated")
+            } else {
+                NSLog("Store stocks updating error")
+            }
+        }
+    }
+    
+    func fetchOrders() {
+        mainViewModel.fetchOrdersData(startDate: "2022-11-01T00:00:00Z",
+                                      endDate: "2022-12-29T00:00:00Z")
+        { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }

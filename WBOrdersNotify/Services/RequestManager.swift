@@ -63,13 +63,13 @@ class RequestManager {
         }
     }
     
-    func fetchStocksData<T: Decodable>(take: Int, skip: Int, completion: @escaping (T?) -> Void) {
+    func fetchStocksData<T: Decodable>(completion: @escaping (T?) -> Void) {
         
         let queryItems = [
             URLQueryItem(name: RequestParams.take.rawValue,
-                         value: String(take)),
+                         value: "1000"),
             URLQueryItem(name: RequestParams.skip.rawValue,
-                         value: String(skip))
+                         value: "0")
         ]
         
         guard let request = makeRequest(withAPIMethod: .stocks, queryItems: queryItems)

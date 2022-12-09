@@ -17,12 +17,18 @@ class MainViewModel {
     private var waitingOrders : [OrderModel] = [] // status 4
     private var defectedOrders : [OrderModel] = [] // status 5
     
+    private var storeStocks: [String: StockModel] = [:] {
+        didSet {
+            // update orders - change barcodes to names
+        }
+    }
+    
     private lazy var requestManager = RequestManager()
     private var ordersFetchResult: OrdersResultModel?
     
     func fetchOrdersData(startDate: String, endDate: String, completion: @escaping () -> Void) {
+        
         requestManager.fetchOrdersData(startDate: startDate, endDate: endDate) { [weak self] result in
-            
             self?.ordersFetchResult = result
             if let orders = self?.ordersFetchResult?.orders {
                 for order in orders {
@@ -34,14 +40,6 @@ class MainViewModel {
                     case 4: self?.waitingOrders.insert(order, at: 0)
                     case 5: self?.defectedOrders.insert(order, at: 0)
                     default: break
-                        /*
-                         0 - Новый заказ.
-                         1 - Отмена клиента.
-                         2 - Доставлен.
-                         3 - Возврат.
-                         4 - Ожидает.
-                         5 - Брак.
-                         */
                     }
                 }
             }
@@ -49,9 +47,35 @@ class MainViewModel {
         }
     }
     
+    func updateStoreStocks(completion: @escaping (NetworkErrors?) -> Void) {
+        
+        requestManager.fetchStocksData { [weak self] result in
+            let fetchResult: StockResultModel? = result
+            if let stocks = fetchResult?.stocks {
+                for item in stocks {
+                    self?.storeStocks[item.barcode] = item
+                }
+                completion(nil)
+            } else {
+                completion(NetworkErrors.requestError)
+                NSLog(String(describing: StockResultModel.self) + ": updateStoreStocks nil occured")
+            }
+        }
+    }
+    
+    func getProductName(for barcode: String) -> String {
+        if let productName = storeStocks[barcode]?.name {
+            return productName
+        } else {
+            NSLog(String(describing: UnexpectedErrors.cannotFindProductWithBarcode))
+            return "Unexpected error"
+        }
+    }
+    
     func titleForHeaderInSection(_ section: Int) -> String {
         sections[section]
     }
+    
     func numberOfSections() -> Int {
         return sections.count
     }
@@ -68,7 +92,7 @@ class MainViewModel {
         default: return 0
         }
     }
-    //["Ожидают", "Новые", "Отменено", "Возврат", "Брак", "Доставлено"]
+    
     func getCellDataAtIndexPath(_ indexPath: IndexPath) -> OrderModel? {
         
         switch indexPath.section {

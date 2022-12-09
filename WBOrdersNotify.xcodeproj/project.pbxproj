@@ -15,8 +15,8 @@
 		DE0217BE29363E8900FB62E8 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217BD29363E8900FB62E8 /* RequestManager.swift */; };
 		DE0217C029388E1A00FB62E8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217BF29388E1A00FB62E8 /* UIView+Extension.swift */; };
 		DE0217C22938972800FB62E8 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217C12938972800FB62E8 /* OrderViewController.swift */; };
-		DE0217F0293CE23100FB62E8 /* UserStatuses in Resources */ = {isa = PBXBuildFile; fileRef = DE0217EF293CE23100FB62E8 /* UserStatuses */; };
 		DE0217F229423A8A00FB62E8 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */; };
+		DE0217F5294375FF00FB62E8 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0217F4294375FF00FB62E8 /* ErrorHandler.swift */; };
 		DEC3EDBD292A595300A31477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBC292A595300A31477 /* AppDelegate.swift */; };
 		DEC3EDBF292A595300A31477 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDBE292A595300A31477 /* SceneDelegate.swift */; };
 		DEC3EDC1292A595300A31477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3EDC0292A595300A31477 /* ViewController.swift */; };
@@ -39,8 +39,8 @@
 		DE0217BD29363E8900FB62E8 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		DE0217BF29388E1A00FB62E8 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DE0217C12938972800FB62E8 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
-		DE0217EF293CE23100FB62E8 /* UserStatuses */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserStatuses; sourceTree = "<group>"; };
 		DE0217F129423A8A00FB62E8 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		DE0217F4294375FF00FB62E8 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		DEC3EDB9292A595300A31477 /* WBOrdersNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBOrdersNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC3EDBC292A595300A31477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC3EDBE292A595300A31477 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +76,14 @@
 			path = MainScreen;
 			sourceTree = "<group>";
 		};
+		DE0217F3294375E100FB62E8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DE0217F4294375FF00FB62E8 /* ErrorHandler.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DEC3EDB0292A595300A31477 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +104,7 @@
 		DEC3EDBB292A595300A31477 /* WBOrdersNotify */ = {
 			isa = PBXGroup;
 			children = (
+				DE0217F3294375E100FB62E8 /* Helpers */,
 				DEC3EDD8292B3A8800A31477 /* Services */,
 				DEC3EDBC292A595300A31477 /* AppDelegate.swift */,
 				DEC3EDBE292A595300A31477 /* SceneDelegate.swift */,
@@ -106,7 +115,6 @@
 				DEC3EDC5292A595500A31477 /* Assets.xcassets */,
 				DEC3EDC7292A595500A31477 /* LaunchScreen.storyboard */,
 				DEC3EDCA292A595500A31477 /* Info.plist */,
-				DE0217EF293CE23100FB62E8 /* UserStatuses */,
 			);
 			path = WBOrdersNotify;
 			sourceTree = "<group>";
@@ -221,7 +229,6 @@
 				DEC3EDC9292A595500A31477 /* LaunchScreen.storyboard in Resources */,
 				DEC3EDDD292B427900A31477 /* .gitignore in Resources */,
 				DEC3EDC6292A595500A31477 /* Assets.xcassets in Resources */,
-				DE0217F0293CE23100FB62E8 /* UserStatuses in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +254,7 @@
 				DE0217BE29363E8900FB62E8 /* RequestManager.swift in Sources */,
 				DEC3EDD7292B35CC00A31477 /* ViewModel.swift in Sources */,
 				DEC3EDE5292C850300A31477 /* UIColor+Extension.swift in Sources */,
+				DE0217F5294375FF00FB62E8 /* ErrorHandler.swift in Sources */,
 				DE0217C22938972800FB62E8 /* OrderViewController.swift in Sources */,
 				DE0217F229423A8A00FB62E8 /* OrderViewModel.swift in Sources */,
 			);

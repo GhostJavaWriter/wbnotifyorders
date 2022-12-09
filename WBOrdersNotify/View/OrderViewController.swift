@@ -8,27 +8,6 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-    /*
-     let dateCreated: String
-     let orderUID: String
-     let officeAddress: String
-     let orderId: String
-     let barcode: String
-     let userStatus: Int
-     let totalPrice: Int
-     let convertedPrice: Int
-     let deliveryType: Int
-     
-     integer
-     Enum: 0 1 2 3 4 5
-     Статус выставляемый Wildberries.
-     0 - Новый заказ.
-     1 - Отмена клиента.
-     2 - Доставлен.
-     3 - Возврат.
-     4 - Ожидает.
-     5 - Брак.
-     */
     
     private lazy var mainContainerView: UIView = {
         let view = UIView()

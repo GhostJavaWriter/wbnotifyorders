@@ -13,6 +13,7 @@ struct OrderModel: Decodable {
     let orderUID: String
     let officeAddress: String
     let orderId: String
+    let chrtId: Int
     let barcode: String
     let userStatus: Int
     let totalPrice: Int

@@ -45,7 +45,6 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .pagesBackgroundColor
 
-        //updateDataFromNetwork()
     }
     
     // MARK: Support functions
@@ -54,19 +53,6 @@ class ViewController: UIViewController {
         
     }
     
-    private func updateDataFromNetwork() {
-        
-        activityIndicator.startAnimating()
-        
-//        viewModel.fetchOrdersData(startDate: "", endDate: "") { [weak self] in
-//
-//            DispatchQueue.main.async {
-//                self?.title = self?.viewModel.getTitle()
-//                self?.tableView.reloadData()
-//                self?.activityIndicator.stopAnimating()
-//            }
-//        }
-    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
